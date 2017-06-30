@@ -3,6 +3,7 @@ package com.bnade.wow.client.util;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 /**
@@ -12,7 +13,7 @@ public class IOUtilsTest {
 
     @Test
     public void inputStreamToStringTest() throws Exception {
-        InputStream is = null;
+        InputStream is = new ByteArrayInputStream("测试".getBytes("utf-8"));
         Assert.assertEquals("测试", IOUtils.inputStreamToString(is, "utf-8"));
     }
 
